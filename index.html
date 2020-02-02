@@ -60,7 +60,7 @@
       
       <section>
       <div>
-        <table id="resultsTable">
+        <table id="resultsTable" class="resultsTable">
         </table>
         </div>
       </section>
@@ -179,15 +179,16 @@
             }
           const newCo1 = document.createElement("tr")
           newCo1.setAttribute("id", "raf");
-          newCo1.innerHTML = "<td><img src=\"https://www.comenaranjas.com/images/stories/virtuemart/product/tomate-raf.jpg\" class=\"responsive_image\"></td><td>  <form id=\"raf\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test1\">     <!--input id=\"submitBtn\" type=\"submit\" /-->    </form></td><td><div id=\"results1\">£6.99</div></td><td><input id=\"deleteBtn1\" type=\"submit\" value=\"remove item\" /></td>"
+          newCo1.innerHTML = "<td class=\"tdchart\"><img src=\"https://www.comenaranjas.com/images/stories/virtuemart/product/tomate-raf.jpg\" class=\"responsive_image_result\"></td><td>  <form id=\"raf\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test1\">     <!--input id=\"submitBtn\" type=\"submit\" /-->    </form></td><td><div id=\"results1\">£6.99</div></td><td><input id=\"deleteBtn1\" type=\"submit\" value=\"remove item\" /></td>"
           resultsTable.append(newCo1)
           const ColResult = document.createElement("tr")
           ColResult.setAttribute("id", "resultsTotalRow");
-          ColResult.innerHTML = "<td class=\"tdTotal\" colspan=\"3\">TOTAL:</td><td class=\"tdTotal\"><div id=\"resultsTotal\"></div></td>"
+          ColResult.innerHTML = "<td class=\"tdTotal\" colspan=\"2\">TOTAL:</td><td class=\"tdTotal\"><div id=\"resultsTotal\"></div></td>"
           resultsTable.append(ColResult)
           const input1=document.getElementById('test1')
           input1.setAttribute("value", 1)
           input1.onclick = submitHandler 
+          input1.onchange = submitHandler 
           const results1 = document.getElementById('results1')
           const deleteBtn1=document.getElementById('deleteBtn1')
           deleteBtn1.onclick = deleteHandler1
@@ -216,7 +217,7 @@
             }
           const newCo1 = document.createElement("tr")
           newCo1.setAttribute("id", "heirloom");
-          newCo1.innerHTML = "<td><img src=\"https://foodandstyle.com/wp-content/uploads/2009/07/IMG_9851-Hierloom-tomato-750.jpg\" class=\"responsive_image\"></td><td>  <form id=\"heirloom\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test2\">     </form></td><td><div id=\"results2\">£5.49</div></td><td><input id=\"deleteBtn2\" type=\"submit\" value=\"remove item\" /></td>"
+          newCo1.innerHTML = "<td class=\"tdchart\"><img src=\"https://foodandstyle.com/wp-content/uploads/2009/07/IMG_9851-Hierloom-tomato-750.jpg\" class=\"responsive_image_result\"></td><td>  <form id=\"heirloom\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test2\">     </form></td><td><div id=\"results2\">£5.49</div></td><td><input id=\"deleteBtn2\" type=\"submit\" value=\"remove item\" /></td>"
           resultsTable.append(newCo1)
           const ColResult = document.createElement("tr")
           ColResult.setAttribute("id", "resultsTotalRow");
@@ -226,6 +227,7 @@
           const input2=document.getElementById('test2')
           input2.setAttribute("value", 1)
           input2.onclick = submitHandler 
+          input2.onchange = submitHandler 
           const results2 = document.getElementById('results2')
           const deleteBtn2=document.getElementById('deleteBtn2')
           deleteBtn2.onclick = deleteHandler2 

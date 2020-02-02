@@ -1,4 +1,35 @@
 
+body {
+  margin: 0;
+  background-color: white;
+}
+header{
+  text-align: center;
+  padding-top: 1vw;
+  padding-bottom: 2vw;
+  background-color: rgb(39, 67, 117);
+
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  margin-left: -10vw;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.5s font-size linear;
+    background-color: rgb(39, 67, 117);
+
+}
+
+h1:hover {
+  font-size: 31px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.5s font-size linear;
+}
+
 section{
   margin-top: 2vw;
   margin-left: 10vw;
@@ -6,23 +37,15 @@ section{
 
 }
 
-
-form div + div {
-  margin-top: 1em;
-}
-
-label {
-  /* Uniform size & alignment */
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 3px;
-  display: flex;
-  margin-right: 1px;
-}
-
 .responsive_image {
   height: 200px;
   width: 300px;
+
+}
+
+.responsive_image_result {
+  height: 130px;
+  width: 195px;
 
 }
 
@@ -32,20 +55,14 @@ textarea {
        By default, textareas have a monospace font */
   font: 1em;
   font-family: Arial, Helvetica, sans-serif;
-  
-
-  /* Uniform text field size */
-  width: 300px;
+    width: 300px;
   box-sizing: border-box;
 
-  /* Match form field borders */
-  border: 1px solid #999;
+
 }
 
 input,
 select {
-  /* To make sure that all text fields have the same font settings
-       By default, textareas have a monospace font */
   background-color: rgb(85, 107, 145);
   font-family: Arial, Helvetica, sans-serif;
   color: white;
@@ -74,52 +91,8 @@ textarea:focus {
   border-color: #000;
 }
 
-textarea {
-  /* Align multiline text fields with their labels */
-  /* Provide space to type some text */
-  height: 5em;
-}
 
 
-body {
-  margin: 0;
-  background-color: white;
-}
-
-nav {
-  text-align: center;
-  padding-left: 15vw;
-  
-  padding-top: 1vw;
-  padding-bottom: 1vw;
-  background-color: rgb(39, 67, 117);
-}
-
-nav > ul {
-  text-align: center;
-  display: flex;
-  list-style-type: none;
-}
-
-nav > ul > li {
-  text-align: center;
-  margin: 0 3vw;
-}
-
-nav > ul > li > a {
-  text-align: center;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: calc(8px + 2vmin);
-  color: rgb(190,190,190);
-  transition: color 0.3s linear;
-}
-
-nav > ul > li > a:hover {
-  color: rgb(190,190,190);
-  transition: color 0.1s linear;
-}
 
 table {
   align-self: center;
@@ -131,39 +104,26 @@ table {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-
-
-header{
-  background-color: rgb(39, 67, 117);
-
-}
-
-h1 {
-  margin: 0;
-  padding: 0;
-  padding-top: 30px;
-  margin-left: -10vw;
-  text-align: center;
-  color: whitesmoke;
-  font-size: 30px;
+.resultsTable {
+  align-self: right;
+  width: 10vw;
+  border-collapse: collapse;
+  border: 2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
-  transition: 0.5s font-size linear;
-    background-color: rgb(39, 67, 117);
+}
 
-}
-h1:hover {
-  font-size: 31px;
-  font-family: Arial, Helvetica, sans-serif;
-  transition: 0.5s font-size linear;
-}
+
+
+
+
 
 td, tr {
   margin-left: 2px;
   font-size: 14px;
   border: 1px solid rgb(190,190,190);
-  vertical-align: 0px;
+  vertical-align: center;
     text-align: center;
     background-color: rgb(235,235,235);
 
@@ -182,7 +142,8 @@ tr td.tdsecondbis {
 }
 
 tr td.tdmain {
-  
+  vertical-align: center;
+
   background-color: rgb(242, 242, 242);
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
@@ -191,12 +152,26 @@ tr td.tdmain {
 }
 
 tr td.tdTotal {
-  
+  vertical-align: center;
+
   background-color: rgb(85, 107, 145);
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px 20px;
   text-align: right;
+
+}
+
+tr td.tdchart {
+  vertical-align: center;
+
+  background-color: rgb(232, 232, 232);
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px 5px;
+  text-align: center;
+ vertical-align: center;
+  width: 40px;
 
 }
 
