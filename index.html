@@ -17,8 +17,6 @@
                   <td class="tdmain">Type</td>
                   <td class="tdmain">description</td>
                   <td class="tdmain">price</td>
-                  <td class="tdmain"></td>
-
                 </tr>
               <tr>
                 <td>
@@ -31,8 +29,8 @@
                 <td>
                     £6.99
                   </td>
-                <td>
-                  <input id="submitBtn1" type="submit" value="Add"/>
+                <td class="tdsecondbis">
+                  <input  id="submitBtn1" type="submit" value="Add"/>
                 </td>
               </tr>
               <tr>
@@ -46,7 +44,7 @@
                   <td>
                       £5.49
                     </td>
-                  <td>
+                  <td class="tdsecondbis">
                     <input id="submitBtn2" type="submit" value="Add"/>
                   </td>
                 </tr>
@@ -57,19 +55,24 @@
         
 
       </section>
-      
-      <section>
-      <div>
+    <section>
+            <hr />
+            <h2>Your order:</h2>
+
+    </section>
+
+
+      <section class="centrada">
+      <div class="centrada"> 
         <table id="resultsTable" class="resultsTable">
         </table>
-        </div>
+        </div class="centrada">
       </section>
     </main>
 
 
       
     <script>
-      const form=document.getElementById('raf')
       const submitBtn1=document.getElementById('submitBtn1')
       const submitBtn2=document.getElementById('submitBtn2')
       const resultsTable = document.getElementById('resultsTable')
@@ -82,6 +85,9 @@
 
     const sum = function(a, b){
       return ('£'+(Number(a)+Number(b)).toFixed(2));
+    }
+    const sum2 = function(a, b){
+      return (Number(a)+Number(b));
     }
 
     const calculateTotal = function(){
@@ -161,7 +167,7 @@
 
       }
 
-      const submitHandler2 = function(event){
+      const submitHandlerRaf = function(event){
         // prevents form from reloading
         event.preventDefault()
         //clean ups results
@@ -179,7 +185,7 @@
             }
           const newCo1 = document.createElement("tr")
           newCo1.setAttribute("id", "raf");
-          newCo1.innerHTML = "<td class=\"tdchart\"><img src=\"https://www.comenaranjas.com/images/stories/virtuemart/product/tomate-raf.jpg\" class=\"responsive_image_result\"></td><td>  <form id=\"raf\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test1\">     <!--input id=\"submitBtn\" type=\"submit\" /-->    </form></td><td><div id=\"results1\">£6.99</div></td><td><input id=\"deleteBtn1\" type=\"submit\" value=\"remove item\" /></td>"
+          newCo1.innerHTML = "<td class=\"tdchart\"><img src=\"https://www.comenaranjas.com/images/stories/virtuemart/product/tomate-raf.jpg\" class=\"responsive_image_result\"></td><td>  <form id=\"raf\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test1\">     <!--input id=\"submitBtn\" type=\"submit\" /-->    </form></td><td><div id=\"results1\">£6.99</div></td><td class=\"tdsecondbis\"><input id=\"deleteBtn1\" type=\"submit\" value=\"remove item\" /></td>"
           resultsTable.append(newCo1)
           const ColResult = document.createElement("tr")
           ColResult.setAttribute("id", "resultsTotalRow");
@@ -199,12 +205,18 @@
           results1.append(newLi1)
           calculateTotal()
           }
+          else{
+            const input1=document.getElementById('test1')
+            input1.setAttribute("value", sum2(input1.value,1))
+            calculateTotal()
+            console.log("aqui")
+          }
           console.log(resultsTable)
           
 
         }
 
-        const submitHandler3 = function(event){
+        const submitHandlerHeirloom = function(event){
         // prevents form from reloading
         event.preventDefault()
 
@@ -217,11 +229,11 @@
             }
           const newCo1 = document.createElement("tr")
           newCo1.setAttribute("id", "heirloom");
-          newCo1.innerHTML = "<td class=\"tdchart\"><img src=\"https://foodandstyle.com/wp-content/uploads/2009/07/IMG_9851-Hierloom-tomato-750.jpg\" class=\"responsive_image_result\"></td><td>  <form id=\"heirloom\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test2\">     </form></td><td><div id=\"results2\">£5.49</div></td><td><input id=\"deleteBtn2\" type=\"submit\" value=\"remove item\" /></td>"
+          newCo1.innerHTML = "<td class=\"tdchart\"><img src=\"https://foodandstyle.com/wp-content/uploads/2009/07/IMG_9851-Hierloom-tomato-750.jpg\" class=\"responsive_image_result\"></td><td>  <form id=\"heirloom\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test2\">     </form></td><td><div id=\"results2\">£5.49</div></td><td class=\"tdsecondbis\"><input id=\"deleteBtn2\" type=\"submit\" value=\"remove item\" /></td>"
           resultsTable.append(newCo1)
           const ColResult = document.createElement("tr")
           ColResult.setAttribute("id", "resultsTotalRow");
-          ColResult.innerHTML = "<td class=\"tdTotal\" colspan=\"3\">TOTAL:</td><td class=\"tdTotal\"><div id=\"resultsTotal\"></div></td>"
+          ColResult.innerHTML = "<td class=\"tdTotal\" colspan=\"2\">TOTAL:</td><td class=\"tdTotal\"><div id=\"resultsTotal\"></div></td>"
           resultsTable.append(ColResult)
 
           const input2=document.getElementById('test2')
@@ -237,6 +249,12 @@
           results2.innerHTML =""
           results2.append(newLi1)
           calculateTotal()
+          }
+          else{
+            const input2=document.getElementById('test2')
+            input2.setAttribute("value", sum2(input2.value,1))
+            calculateTotal()
+            console.log("aqui")
           }
           console.log(resultsTable)
           
@@ -267,8 +285,8 @@
 
 
 
-      submitBtn1.onclick = submitHandler2 
-      submitBtn2.onclick = submitHandler3
+      submitBtn1.onclick = submitHandlerRaf 
+      submitBtn2.onclick = submitHandlerHeirloom
 
 
 
