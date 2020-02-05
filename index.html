@@ -216,6 +216,10 @@
           else{
             const input1=document.getElementById('test1')
             input1.setAttribute("value", sum2(input1.value,1))
+            results1.innerHTML =""
+            const newLi1 = document.createElement("p")
+        newLi1.innerText = mult(input1.value,6.99 );
+        results1.append(newLi1)
             calculateTotal()
             console.log("aqui")
           }
@@ -260,11 +264,16 @@
           newLi1.innerText = mult(input2.value,5.49 )
           results2.innerHTML =""
           results2.append(newLi1)
+          
           calculateTotal()
           }
           else{
             const input2=document.getElementById('test2')
             input2.setAttribute("value", sum2(input2.value,1))
+            results2.innerHTML =""
+            const newLi1 = document.createElement("p")
+        newLi1.innerText = mult(input2.value,5.49 );
+        results2.append(newLi1)
             calculateTotal()
             console.log("aqui")
           }
@@ -278,6 +287,11 @@
         event.preventDefault()
         const input1=document.getElementById('test1')
             input1.setAttribute("value", sum2(input1.value,1))
+            results1.innerHTML =""
+            const newLi1 = document.createElement("p")
+        newLi1.innerText = mult(input1.value,6.99 );
+        results1.append(newLi1)
+
             calculateTotal()
        
           console.log(resultsTable)    
@@ -290,6 +304,10 @@
         const input1=document.getElementById('test1')
         if(input1.value>0){
             input1.setAttribute("value", rest2(input1.value,1))
+            results1.innerHTML =""
+            const newLi1 = document.createElement("p")
+        newLi1.innerText = mult(input1.value,6.99 );
+        results1.append(newLi1)
             calculateTotal()
         }
           console.log(resultsTable)    
@@ -302,6 +320,10 @@
         event.preventDefault()
         const input2=document.getElementById('test2')
             input2.setAttribute("value", sum2(input2.value,1))
+            results2.innerHTML =""
+            const newLi1 = document.createElement("p")
+        newLi1.innerText = mult(input2.value,5.49 );
+        results2.append(newLi1)
             calculateTotal()
        
           console.log(resultsTable)    
@@ -314,6 +336,10 @@
         const input2=document.getElementById('test2')
         if(input2.value>0){
             input2.setAttribute("value", rest2(input2.value,1))
+            results2.innerHTML =""
+            const newLi1 = document.createElement("p")
+        newLi1.innerText = mult(input2.value,5.49 );
+        results2.append(newLi1)
             calculateTotal()
         }
           console.log(resultsTable)    
