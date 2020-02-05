@@ -90,6 +90,10 @@
       return (Number(a)+Number(b));
     }
 
+    const rest2 = function(a, b){
+      return (Number(a)-Number(b));
+    }
+
     const calculateTotal = function(){
       const resultsTotal = document.getElementById('resultsTotal')
       resultsTotal.innerHTML =""
@@ -185,7 +189,7 @@
             }
           const newCo1 = document.createElement("tr")
           newCo1.setAttribute("id", "raf");
-          newCo1.innerHTML = "<td class=\"tdchart\"><img src=\"https://www.comenaranjas.com/images/stories/virtuemart/product/tomate-raf.jpg\" class=\"responsive_image_result\"></td><td>  <form id=\"raf\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test1\">     <!--input id=\"submitBtn\" type=\"submit\" /-->    </form></td><td><div id=\"results1\">£6.99</div></td><td class=\"tdsecondbis\"><input id=\"deleteBtn1\" type=\"submit\" value=\"remove item\" /></td>"
+          newCo1.innerHTML = "<td class=\"tdchart\"><img src=\"https://www.comenaranjas.com/images/stories/virtuemart/product/tomate-raf.jpg\" class=\"responsive_image_result\"></td><td class=\"inputpeqtd\">   <input id=\"menos1\" class=\"inputpeq\" type=\"submit\" value=\"-\" /> <form id=\"raf\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test1\"> </form>  <input id=\"mas1\"  class=\"inputpeq\" type=\"submit\" value=\"+\" /></td><td><div id=\"results1\">£6.99</div></td><td class=\"tdsecondbis\"><input id=\"deleteBtn1\" type=\"submit\" value=\"remove item\" /></td>"
           resultsTable.append(newCo1)
           const ColResult = document.createElement("tr")
           ColResult.setAttribute("id", "resultsTotalRow");
@@ -195,6 +199,10 @@
           input1.setAttribute("value", 1)
           input1.onclick = submitHandler 
           input1.onchange = submitHandler 
+          const inputmas=document.getElementById('mas1')
+          inputmas.onclick = submitHandlerSumaRaf 
+          const inputmenos=document.getElementById('menos1')
+          inputmenos.onclick = submitHandlerRestaRaf 
           const results1 = document.getElementById('results1')
           const deleteBtn1=document.getElementById('deleteBtn1')
           deleteBtn1.onclick = deleteHandler1
@@ -229,7 +237,7 @@
             }
           const newCo1 = document.createElement("tr")
           newCo1.setAttribute("id", "heirloom");
-          newCo1.innerHTML = "<td class=\"tdchart\"><img src=\"https://foodandstyle.com/wp-content/uploads/2009/07/IMG_9851-Hierloom-tomato-750.jpg\" class=\"responsive_image_result\"></td><td>  <form id=\"heirloom\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test2\">     </form></td><td><div id=\"results2\">£5.49</div></td><td class=\"tdsecondbis\"><input id=\"deleteBtn2\" type=\"submit\" value=\"remove item\" /></td>"
+          newCo1.innerHTML = "<td class=\"tdchart\"><img src=\"https://foodandstyle.com/wp-content/uploads/2009/07/IMG_9851-Hierloom-tomato-750.jpg\" class=\"responsive_image_result\"></td><td class=\"inputpeqtd\"> <input id=\"menos2\"  class=\"inputpeq\" type=\"submit\" value=\"-\" /> <form id=\"heirloom\">      <input type=\"number\" name=\"quantity\" min=\"1\" id=\"test2\"></form><input id=\"mas2\" type=\"submit\"  class=\"inputpeq\" value=\"+\" /></td><td><div id=\"results2\">£5.49</div></td><td class=\"tdsecondbis\"><input id=\"deleteBtn2\" type=\"submit\" value=\"remove item\" /></td>"
           resultsTable.append(newCo1)
           const ColResult = document.createElement("tr")
           ColResult.setAttribute("id", "resultsTotalRow");
@@ -240,6 +248,10 @@
           input2.setAttribute("value", 1)
           input2.onclick = submitHandler 
           input2.onchange = submitHandler 
+          const inputmas=document.getElementById('mas2')
+          inputmas.onclick = submitHandlerSumaHeirloom 
+          const inputmenos=document.getElementById('menos2')
+          inputmenos.onclick = submitHandlerRestaHeirloom 
           const results2 = document.getElementById('results2')
           const deleteBtn2=document.getElementById('deleteBtn2')
           deleteBtn2.onclick = deleteHandler2 
@@ -261,6 +273,52 @@
 
         }
 
+        const submitHandlerSumaRaf = function(event){
+        // prevents form from reloading
+        event.preventDefault()
+        const input1=document.getElementById('test1')
+            input1.setAttribute("value", sum2(input1.value,1))
+            calculateTotal()
+       
+          console.log(resultsTable)    
+
+        }
+
+        const submitHandlerRestaRaf = function(event){
+        // prevents form from reloading
+        event.preventDefault()
+        const input1=document.getElementById('test1')
+        if(input1.value>0){
+            input1.setAttribute("value", rest2(input1.value,1))
+            calculateTotal()
+        }
+          console.log(resultsTable)    
+
+        }
+        
+
+        const submitHandlerSumaHeirloom = function(event){
+        // prevents form from reloading
+        event.preventDefault()
+        const input2=document.getElementById('test2')
+            input2.setAttribute("value", sum2(input2.value,1))
+            calculateTotal()
+       
+          console.log(resultsTable)    
+
+        }
+
+        const submitHandlerRestaHeirloom = function(event){
+        // prevents form from reloading
+        event.preventDefault()
+        const input2=document.getElementById('test2')
+        if(input2.value>0){
+            input2.setAttribute("value", rest2(input2.value,1))
+            calculateTotal()
+        }
+          console.log(resultsTable)    
+
+        }
 
         const deleteHandler2 = function(event){
         // prevents form from reloading

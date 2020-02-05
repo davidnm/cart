@@ -104,6 +104,15 @@ select {
 
 }
 
+.inputpeq{
+  width: 30px;
+}
+
+td.inputpeqtd{
+  
+  width: 100px;
+}
+
 .fondoblanco{
   background-color:white;
   color: black;
